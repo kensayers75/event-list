@@ -28,6 +28,11 @@
   list-style: none;
 }
 
+:global .LazyLoad.is-visible {
+  height: 100%;
+  min-width: 100%;
+}
+
 /* basic stuff */
 :global html {
   box-sizing: border-box;

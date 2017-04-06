@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactHtmlParser from 'html-react-parser';
+import LazyLoad from 'react-lazy-load';
 import classnames from 'classnames';
 import { Link } from 'react-router';
 import Date from './../Date';
@@ -24,7 +25,9 @@ class EventListItem extends Component {
     return (
       <Link onClick={this.handleOnClick} key={id} className={s.eventListItem} >
         <div className={classnames(s.img, (image ? '': s.noImg))}>
-          {image && <img src={image} alt={`${title}${{venue}}`}/>}
+          {image && <LazyLoad>
+            <img src={image} alt={`${title}${{venue}}`}/>
+          </LazyLoad>}
         </div>
         <div className={s.content}>
           <Date value={date} />
