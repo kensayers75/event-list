@@ -1,0 +1,76 @@
+@import './../../css/variable';
+
+.header {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.headerContent {
+  background: linear-gradient(180deg,rgba(44,54,66,0) 15%,#2c3642);
+  position: absolute;
+  bottom: 0;
+  padding: 0 2em 1em 2em;
+  width: 100%;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(0deg, rgba(44,54,66,0) 15%, #fff);
+  @media (min-width: $-BREAKPOINT-not-mobile) {
+    flex-direction: row-reverse;
+  }
+}
+
+.cta {
+  text-decoration: none;
+  background: $-BUTTON-bg;
+  color: $-BUTTON-color;
+  padding: $-BUTTON-padding;
+  margin-bottom: 1em;
+  font-size: 2.5em;
+  display: inline-block;
+  border-radius: $-BUTTON-border-radius;
+  &:hover {
+    background: darken($-BUTTON-bg,10%);
+  }
+  @media (min-width: $-BREAKPOINT-not-mobile) {
+    margin: 0 auto;
+  }
+}
+
+.informationTitle {
+  margin-bottom: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.main {
+  flex:2;
+  padding: 2em;
+}
+
+.side {
+  flex:1;
+  padding: 2em;
+}
+
+.informationDesc {
+  line-height: 1.4;
+  p {
+    margin-bottom:.5em;
+  }
+}
+
+.eventType {
+  background:$-BRAND-color-1;
+  display: inline-block;
+  padding:0.3em 0.5em;
+  margin-bottom: 1em;
+  color:#fff;
+  span {
+    text-transform: uppercase;
+  }
+}

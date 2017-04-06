@@ -1,0 +1,36 @@
+.eventListItem {
+  background-color: #fff;
+  margin-bottom: 24px;
+  box-shadow: 0 0 0 transparent;
+  overflow: hidden;
+  display: flex;
+  height: 200px;
+  &:hover {
+    box-shadow: 0 0 17px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  .img {
+    overflow: hidden;
+    flex: 0 0 200px;
+    img {
+      height: 100%;
+      min-width: 100%;
+    }
+  }
+  .noImg {
+    background: linear-gradient(to bottom, #b7deed 0%, #71ceef 50%, #21b4e2 52%, #b7deed 100%);;
+    position: relative;
+    &:after {
+      content: 'Opps! Image missing';
+      position: absolute;
+      top: 46%;
+      left: 13%;
+      color: #bdeaf9;
+    }
+  }
+  .content {
+    flex: 1;
+    padding: 0 24px;
+    align-self: center;
+  }
+}

@@ -1,0 +1,45 @@
+@import './../../css/variable';
+
+.search {
+  overflow: hidden;
+  position: relative;
+  height: $-SIZES-filter-height;
+  flex: 1 1 auto;
+
+  input {
+    width:100%;
+    position: absolute;
+    background: none;
+    top: 0px;
+    padding: 0.8em 0.8em 0.8em 3.5em;
+    border: 1px solid $-COLORS-steady-grey;
+    font-size: $-FONT-mornal-size;
+    height: $-SIZES-filter-height;
+  }
+}
+
+.magifyingGlass {
+  z-index:100;
+  margin-top: .5em;
+  margin-left: 12px;
+  box-sizing: content-box;
+  width: 1.5em;
+  height: 1.5em;
+  position: relative;
+  content: "";
+  border: 3px solid $-FONT-normal-color;
+  border-radius: 22px;
+  &:before {
+    box-sizing: content-box;
+    width: 13px;
+    height: 3px;
+    position: absolute;
+    content: "";
+    right: -9px;
+    bottom: -2px;
+    background: $-FONT-normal-color;
+    transform: rotateZ(45deg) scaleX(1) scaleY(1) scaleZ(1);
+  }
+}
+
+

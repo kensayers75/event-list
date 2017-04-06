@@ -1,0 +1,21 @@
+@import './../../css/variable';
+
+.filters {
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 20px;
+  @media (min-width: $-BREAKPOINT-not-mobile) {
+    flex-direction: row;
+  }
+}
+
+.filterWrap {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  @media (min-width: $-BREAKPOINT-not-mobile) {
+    flex-direction: row;
+  }
+}
+
+

@@ -1,0 +1,52 @@
+@import './../../css/variable';
+
+.venue {
+  position: relative;
+}
+
+.venueIcon {
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  margin: 1px 4px 7px;
+  background: #dedede;
+  display: inline-block;
+  vertical-align: middle;
+
+
+  &:before{
+    content: '';
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+    background: white;
+  }
+  &:after{
+    content: '';
+  }
+
+}
+
+.rev {
+  color: white;
+  font-size: 1.2em;
+
+  .venueIcon {
+    background: $-BRAND-color-1;
+  }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+@import './../../css/variable';
+
+.date {
+  background: $-BRAND-color-1;
+  color: white;
+  padding: 0.3em 0.5em;
+  margin-bottom: 1em;
+  display: inline-block;
+}

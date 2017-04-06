@@ -1,0 +1,15 @@
+@import './../../../css/variable';
+
+@media (min-width: $-BREAKPOINT-not-mobile) {
+  .fixedContainer {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: $-BREAKPOINT-990) {
+  .fixedContainer {
+    width: 60em;
+    margin: 0 auto;
+  }
+}
