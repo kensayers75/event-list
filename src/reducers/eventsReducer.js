@@ -11,7 +11,7 @@ import {
   APPLY_SEARCH_FILTER
 } from './../actions/types';
 
-import {getLocationFromVenue, cleanEventType, findUnique} from './../helpers';
+import {findUnique} from './../helpers';
 
 const initialState = {
   list: [],
