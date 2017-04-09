@@ -7,31 +7,29 @@ const getEvents = events => events.list;
 
 const getFilteredEvents = (events, typeFilter, venueFilter, searchFilter) => {
 
-  let result = events;
-
   if (venueFilter) {
-    result = result.filter(({myCity})=> {
+    events = events.filter(({myCity})=> {
       return venueFilter === myCity;
     });
   }
 
   if (typeFilter) {
-    result = result.filter(({myType})=> {
+    events = events.filter(({myType})=> {
       return typeFilter === myType;
-    })
+    });
   }
 
   if(searchFilter){
-    result = result.filter(({title})=> {
+    events = events.filter(({title})=> {
       return title.toUpperCase().includes(searchFilter.toUpperCase());
-    })
+    });
   }
 
   //sort in date order
-  result = result.sort(function (a, b) {
+  events = events.sort(function (a, b) {
     return a.myDate - b.myDate;
   });
-  return result;
+  return events;
 };
 
 export default createSelector(

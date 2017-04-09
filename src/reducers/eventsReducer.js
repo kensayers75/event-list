@@ -11,7 +11,7 @@ import {
   APPLY_SEARCH_FILTER
 } from './../actions/types';
 
-import {getLocationFromVenue, cleanEventType} from './../helpers';
+import {getLocationFromVenue, cleanEventType, findUnique} from './../helpers';
 
 const initialState = {
   list: [],
@@ -26,22 +26,6 @@ const initialState = {
   venuesFilter: ''
 };
 
-
-const findUnique = (arr, key) => {
-  let result = [];
-  arr.forEach((v) => {
-    let val = v[key];
-    if(key==='venue'){
-      val = getLocationFromVenue(val);
-    }
-    val = cleanEventType(val);
-    if(val && (result.indexOf(val)===-1)){
-      result.push(val);
-    }
-  });
-  return result.sort();
-};
-
 export default function ( state = initialState, action ) {
   switch (action.type) {
 
@@ -51,7 +35,6 @@ export default function ( state = initialState, action ) {
       });
 
     case FETCH_EVENT_LIST_SUCCESS:
-
       return Object.assign({}, state, {
         pending: false,
         list: action.payload,
@@ -90,13 +73,11 @@ export default function ( state = initialState, action ) {
       });
 
     case APPLY_VENUE_FILTER:
-
       return Object.assign({}, state, {
         venuesFilter: action.payload
       });
 
     case APPLY_TYPE_FILTER:
-
       return Object.assign({}, state, {
         typesFilter: action.payload
       });

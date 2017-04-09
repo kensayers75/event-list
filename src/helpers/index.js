@@ -59,3 +59,19 @@ export const applyEventData = (events) => {
     };
   });
 };
+
+
+export const findUnique = (arr, key) => {
+  let result = [];
+  arr.forEach((v) => {
+    let val = v[key];
+    if(key==='venue'){
+      val = getLocationFromVenue(val);
+    }
+    val = cleanEventType(val);
+    if(val && (result.indexOf(val)===-1)){
+      result.push(val);
+    }
+  });
+  return result.sort();
+};
